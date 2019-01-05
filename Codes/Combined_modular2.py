@@ -29,19 +29,19 @@ test_perc=0.2
 num_classes=2
 
 # number of features to select for each feature selection method
-num_features=[20,20,20,0]
+num_features=[50,50,50,0]
 selection_fns=[chi2, f_classif, mutual_info_classif]
-dataset_name='ionosphere'
+dataset_name='Hill_Valley'
 
 # Number of epochs for each stage
-num_epochs=[70,70,70,120]
+num_epochs=[500,500,500,750]
 # Batch size for each stage
 batch_size=[15,15,15,10]
 # Layers for each MLP
-layer_det=[[30,20,10],
-			[30,20,10],
-			[30,20,10],
-			[15,10,6]]
+layer_det=[[100,70,35,10],
+			[100,70,35,10],
+			[100,70,35,10],
+			[15,10,10,6]]
 #*************************************************************************
 
 
@@ -105,7 +105,10 @@ def train(train_X, train_y, test_X, test_y, num_of_features, classes, layer_det,
 	model.add(layers.Dropout(0.2, noise_shape=None, seed=None))
 	model.add(Dense(layer_det[2], activation='relu'))
 	model.add(layers.Dropout(0.2, noise_shape=None, seed=None))
+	model.add(Dense(layer_det[3], activation='relu'))
+	model.add(layers.Dropout(0.2, noise_shape=None, seed=None))
 	model.add(Dense(classes, activation='softmax'))
+		
 	# Compile model
 	model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['acc'])
 
