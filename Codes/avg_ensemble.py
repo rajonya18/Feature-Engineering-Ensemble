@@ -14,7 +14,7 @@ from tensorflow.python.keras.utils import to_categorical
 from sklearn.metrics import accuracy_score
 
 num_classes = 2
-dataset = 'waveformEW'
+dataset = 'horse-colic'
 
 def predict(dataset_X,dataset_y, id):
 	# Return the probability of each class
