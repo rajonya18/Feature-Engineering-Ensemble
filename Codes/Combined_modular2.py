@@ -31,7 +31,7 @@ num_classes=2
 # number of features to select for each feature selection method
 num_features=[20,20,20,0]
 selection_fns=[chi2, f_classif, mutual_info_classif]
-dataset_name='ionosphere'
+dataset_name='waveformEW'
 
 # Number of epochs for each stage
 num_epochs=[70,70,70,120]

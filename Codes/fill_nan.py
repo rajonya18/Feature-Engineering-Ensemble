@@ -1,10 +1,12 @@
 import pandas as pd
 import numpy as np 
 
-dataset_name='lymphography'
+dataset_name='waveformEW'
 
 df=pd.read_csv('../Data/'+dataset_name+'.data')
 df.fillna(df.mean())
 # df.replace('g',0,inplace=True)
 # df.replace('b',1,inplace=True)
-df.to_csv('../Data/'+dataset_name+'.csv',index=False)
+colnames= ['a'+str(i) for i in range(len(df.columns)-1)]
+colnames.append('class')
+df.to_csv('../Data/'+dataset_name+'.csv',index=False, header=colnames)
