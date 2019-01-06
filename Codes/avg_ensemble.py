@@ -42,8 +42,8 @@ def test(dataset_name):
 		if (i==0):
 			predictions1=predictions2=predict(dataset_X,dataset_y, (i+1))
 		else:
-			predictions1+=predict(dataset_X,dataset_y, (i+1))
-			predictions2*=predict(dataset_X,dataset_y, (i+1))
+			predictions1=predictions1+predict(dataset_X,dataset_y, (i+1))
+			predictions2=predictions2*predict(dataset_X,dataset_y, (i+1))
 
 	y_pred1=np.argmax(predictions1,axis=1)
 	y_pred2=np.argmax(predictions2,axis=1)

@@ -26,7 +26,7 @@ val_perc=0.4
 trval_perc=train_perc+val_perc
 test_perc=0.2
 
-num_classes=2
+num_classes=3
 
 # number of features to select for each feature selection method
 num_features=[20,20,20,0]
@@ -38,10 +38,10 @@ num_epochs=[70,70,70,120]
 # Batch size for each stage
 batch_size=[15,15,15,10]
 # Layers for each MLP
-layer_det=[[30,20,10],
-			[30,20,10],
-			[30,20,10],
-			[15,10,6]]
+layer_det=[[35,25,10],
+			[35,25,10],
+			[35,25,10],
+			[20,15,10]]
 #*************************************************************************
 
 
